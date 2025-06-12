@@ -1,0 +1,227 @@
+import 'package:coffee_shop/bottom_navigation.dart';
+import 'package:coffee_shop/forgot_password.dart';
+import 'package:coffee_shop/sign_up_screen.dart';
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+       backgroundColor: Color(0xff3c040c),
+      body: Expanded(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Center(
+            child: Stack(
+              children: [
+                Container(
+                    width: double.infinity,
+                    child: Image.asset(fit: BoxFit.cover, "assets/bg.png")),
+                Padding(
+                  padding: const EdgeInsets.only(top: 125),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 85),
+                                child: Container(
+                                  height: 47,
+                                  width: 116,
+                                  decoration: BoxDecoration(
+                                      color: Color(0xffc43c34),
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Center(
+                                    child: Text(
+                                      "Login",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 23),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 30),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Container(
+                                    height: 400,
+                                    width: 310,
+                                    decoration: BoxDecoration(
+                                        color: Color(0xffc43c34),
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
+                                    child: Center(
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 20),
+                                            child: Text(
+                                              "Login to your account",
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                          Container(
+                                            height: 50,
+                                            width: 254,
+                                            decoration: BoxDecoration(
+                                                color: Color(0xffF5F5F5),
+                                                borderRadius:
+                                                    BorderRadius.circular(5)),
+                                            child: Center(
+                                              child: TextFormField(
+                                                cursorHeight: 20,
+                                                cursorColor: Color(0xffc43c34),
+                                                cursorOpacityAnimates: true,
+                                                style: TextStyle(
+                                                    fontSize: 17,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                                decoration: InputDecoration(
+                                                    hintText: "Username",
+                                                    hintStyle:
+                                                        TextStyle(fontSize: 15),
+                                                    prefixIcon: Icon(
+                                                      Icons.person,
+                                                      color: Color(0xffc43c34),
+                                                    ),
+                                                    border: OutlineInputBorder(
+                                                        borderSide:
+                                                            BorderSide.none)),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          Container(
+                                            height: 50,
+                                            width: 254,
+                                            decoration: BoxDecoration(
+                                                color: Color(0xffF5F5F5),
+                                                borderRadius:
+                                                    BorderRadius.circular(5)),
+                                            child: Center(
+                                              child: TextFormField(
+                                                cursorHeight: 20,
+                                                cursorColor: Color(0xffcc5454),
+                                                cursorOpacityAnimates: true,
+                                                style: TextStyle(
+                                                    fontSize: 17,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                                decoration: InputDecoration(
+                                                    hintText: "Password",
+                                                    hintStyle:
+                                                        TextStyle(fontSize: 15),
+                                                    prefixIcon: Icon(
+                                                      Icons.key_outlined,
+                                                      color: Color(0xffcc5454),
+                                                    ),
+                                                    border: OutlineInputBorder(
+                                                        borderSide:
+                                                            BorderSide.none)),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 30),
+                                          InkWell(onTap: () {
+                                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomNavigation()));
+                                            
+                                          },
+                                            child: Container(
+                                              height: 50,
+                                              width: 254,
+                                              decoration: BoxDecoration(
+                                                  color: Color(0xff3e2723),
+                                                  borderRadius:
+                                                      BorderRadius.circular(5)),
+                                              child: Center(
+                                                child: Text(
+                                                  "Login",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              TextButton(
+                                                  onPressed: () {
+                                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassword()));
+                                                  },
+                                                  child: Text(
+                                                    "Forgot your password?    ",
+                                                    style: TextStyle(
+                                                        fontSize: 13,
+                                                        color: Color.fromARGB(
+                                                            255,
+                                                            222,
+                                                            222,
+                                                            222)),
+                                                  ))
+                                            ],
+                                          ),
+                                          SizedBox(height: 30),
+                                          InkWell(onTap: () {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context) => Sign_Up_Screen()));
+                                            
+                                          },
+                                            child: Container(
+                                              height: 42,
+                                              width: 254,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.circular(5)),
+                                              child: Center(
+                                                child: Text(
+                                                  "Sign Up",
+                                                  style: TextStyle(
+                                                      color: Color(0xff3e2723),
+                                                      fontSize: 19,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

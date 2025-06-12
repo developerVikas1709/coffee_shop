@@ -1,0 +1,37 @@
+import 'package:anim_search_app_bar/anim_search_app_bar.dart';
+import 'package:flutter/material.dart';
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(appBar: AppBar(),
+      body: Column(
+        children: [
+          const AnimSearchAppBar(
+            cancelButtonText: "Cancel",
+            hintText: 'Search',
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  'You have pushed the button this many times:',
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
